@@ -34,6 +34,21 @@ namespace Week3MusicStoreTutorial.Controllers
             return View();
         }
 
+        
+
+        public IActionResult Projects()
+        {
+            return View("AdvancedProjects");
+            //ViewBag.Xyz = "XYZ";
+            //ViewBag.Xyz = 55.55;
+            //return View();
+        }
+
+        public IActionResult Albums()
+        {
+            return View("Albums");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
