@@ -18,6 +18,7 @@ namespace Week3_MusicStoreTutorial.Models
         public string Name { get; set; }
         public string Artist { get; set; }
         public DateTime ReleaseDate { get; set; }
+        public Genre Genre { get; set; }
 
         public ICollection<Song> Songs { get; set; }
     }

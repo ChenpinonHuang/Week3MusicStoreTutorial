@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Week3_MusicStoreTutorial.Models;
 
 namespace Week3MusicStoreTutorial.Models
 {
@@ -17,5 +18,6 @@ namespace Week3MusicStoreTutorial.Models
         public string ArtistName { get; set; }
         public string Featuring { get; set; }
         public int RunTimeSeconds { get; set; }
+        public Album Album { get; set; }
     }
 }

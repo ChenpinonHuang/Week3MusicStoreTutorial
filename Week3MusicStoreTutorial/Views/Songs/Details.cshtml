@@ -1,0 +1,48 @@
+﻿@model Week3MusicStoreTutorial.Models.Song
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Song</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtistName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ArtistName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Featuring)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Featuring)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RunTimeSeconds)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RunTimeSeconds)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Album)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Album.AlbumId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SongId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
