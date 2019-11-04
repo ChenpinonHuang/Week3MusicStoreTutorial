@@ -13,6 +13,7 @@ using Week3MusicStoreTutorial.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Week3_MusicStoreTutorial.Models;
+using Week3MusicStoreTutorial.Models;
 
 namespace Week3MusicStoreTutorial
 {
@@ -38,8 +39,14 @@ namespace Week3MusicStoreTutorial
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddDefaultIdentity<IdentityUser>()
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddRoles<ApplicationRole>()
+                .AddRoleManager<RoleManager<ApplicationRole>>()
+                .AddEntityFrameworkStores<Week3MusicStoreTutorialContext>()
+                .AddDefaultTokenProviders();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

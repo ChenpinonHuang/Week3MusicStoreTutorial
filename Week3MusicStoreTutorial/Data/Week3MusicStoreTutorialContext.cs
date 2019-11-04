@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Week3MusicStoreTutorial.Models;
-using Week3_MusicStoreTutorial.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Week3_MusicStoreTutorial.Models
 {
-    public class Week3MusicStoreTutorialContext : DbContext
-    {
+    public class Week3MusicStoreTutorialContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
+    { 
         public Week3MusicStoreTutorialContext (DbContextOptions<Week3MusicStoreTutorialContext> options)
             : base(options)
         {
